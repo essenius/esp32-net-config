@@ -30,6 +30,7 @@ namespace Esp32NetConfigCppTest {
         const IpConfig configIp = Esp32NetConfig::IpAutoConfig;
 
         Preferences preferences;
+        preferences.reset();
         Configuration configuration(&preferences);
         configuration.putIpConfig(&configIp);
         configuration.putMqttConfig(&ConfigMqtt);
@@ -56,6 +57,7 @@ namespace Esp32NetConfigCppTest {
 
     TEST(ConfigurationTest, mqttAndTlsTest) {
         Preferences preferences;
+        preferences.reset();
         constexpr MqttConfig MqttConfig{ "broker", 2048, "user", "password", false };
         constexpr TlsConfig TlsConfig{ "abc", R"(defg)", R"(hijkl)" };
         Configuration configuration(&preferences);
@@ -64,7 +66,8 @@ namespace Esp32NetConfigCppTest {
         constexpr FirmwareConfig FirmwareConfig{ "http://localhost/firmware" };
         configuration.putFirmwareConfig(&FirmwareConfig);
 
-        configuration.begin(false);
+        configuration.begin();
+
         EXPECT_STREQ("broker", configuration.mqtt.broker) << "Broker OK";
         EXPECT_EQ(2048u, configuration.mqtt.port) << "Port OK";
         EXPECT_STREQ("user", configuration.mqtt.user) << "User OK";
@@ -80,6 +83,7 @@ namespace Esp32NetConfigCppTest {
 
     TEST(ConfigurationTest, putNullTest) {
         Preferences preferences;
+        preferences.reset();
         const Configuration configuration(&preferences);
         configuration.putIpConfig(nullptr);
         configuration.putMqttConfig(nullptr);
@@ -102,7 +106,7 @@ namespace Esp32NetConfigCppTest {
         Configuration configuration(&preferences);
         configuration.putWifiConfig(&wifiConfig);
         configuration.putIpConfig(&ipConfig);
-        configuration.begin(false);
+        configuration.begin();
         EXPECT_STREQ("ssid", configuration.wifi.ssid) << "SSID OK";
         EXPECT_STREQ("password", configuration.wifi.password) << "Password OK";
         EXPECT_STREQ("deviceName", configuration.wifi.deviceName) << "Device name OK";

@@ -1,0 +1,41 @@
+Configuration	KEYWORD1
+freeBufferSpace	KEYWORD2
+getFirmwareConfig	KEYWORD2
+getIpConfig	KEYWORD2
+getMqttConfig	KEYWORD2
+getTlsConfig	KEYWORD2
+getWifiConfig	KEYWORD2
+putFirmwareConfig	KEYWORD2
+putIpConfig	KEYWORD2
+putMqttConfig	KEYWORD2
+putTlsConfig	KEYWORD2
+putWifiConfig	KEYWORD2
+
+IpConfig	KEYWORD1
+localIp	KEYWORD2
+gateway	KEYWORD2
+subnetMask	KEYWORD2
+primaryDns	KEYWORD2
+secondaryDns	KEYWORD2
+
+IpAutoConfig	KEYWORD1
+
+FirmwareConfig	KEYWORD1
+baseUrl	Keyword2
+
+MqttConfig	KEYWORD1
+broker	KEYWORD2
+port	KEYWORD2
+user	KEYWORD2
+password	KEYWORD2
+useTls	KEYWORD2
+
+TlsConfig	KEYWORD1
+rootCaCertificate	KEYWORD2
+deviceCertificate	KEYWORD2
+devicePrivateKey	KEYWORD2
+
+WifiConfig	KEYWORD1
+ssid	KEYWORD2
+deviceName	KEYWORD2
+bssid	KEYWORD2

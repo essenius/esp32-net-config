@@ -44,7 +44,7 @@ namespace Esp32NetConfig {
     constexpr auto Firmware = "firmware";
     constexpr auto Url = "url";
 
-    void Configuration::begin(const bool useSecrets) {
+    void Configuration::begin() {
         getIpConfig();
         _next = getWifiConfig(_buffer);
         _next = getTlsConfig(_next);

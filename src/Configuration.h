@@ -64,7 +64,7 @@ namespace Esp32NetConfig {
         TlsConfig tls{};
         WifiConfig wifi{};
         FirmwareConfig firmware{};
-        void begin(bool useSecrets = true);
+        void begin();
         void putFirmwareConfig(const FirmwareConfig* firmwareConfig) const;
         void putMqttConfig(const MqttConfig* mqttConfig) const;
         void putIpConfig(const IpConfig* ipConfig) const;
