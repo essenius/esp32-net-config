@@ -91,7 +91,7 @@ void loop() {
     // nothing to do, waiting forever.
 }
 #else
-// When not running on an ESP32, the test is run. It only tests if nothing crashes. The real testing is done in ConfigurationTest.cpp
+// When not running on an ESP32, run the functions in a test. It only tests if nothing crashes. The real testing is done in ConfigurationTest.cpp
 #include "gtest/gtest.h"
 
 namespace Esp32NetConfigCppTest {
