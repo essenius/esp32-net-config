@@ -15,6 +15,7 @@
 #include <Configuration.h>
 
 namespace Esp32NetConfigCppTest {
+
     void printBssid(const uint8_t* bssid) {
         printf("\tbssid: ");
         if (bssid) {
@@ -75,7 +76,9 @@ namespace Esp32NetConfigCppTest {
         configuration.putFirmwareConfig(&ConfigFirmware);
     }
 }
+
 #ifdef ESP32
+// When running on an ESP32, we use the normal setup/loop construct. 
 Serial.begin(115200);
 delay(500);
 
@@ -88,6 +91,7 @@ void loop() {
     // nothing to do, waiting forever.
 }
 #else
+// When not running on an ESP32, the test is run. It only tests if nothing crashes. The real testing is done in ConfigurationTest.cpp
 #include "gtest/gtest.h"
 
 namespace Esp32NetConfigCppTest {
