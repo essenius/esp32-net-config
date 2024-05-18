@@ -17,7 +17,7 @@ FetchContent_MakeAvailable(googletest)
 
 add_executable(${projectTestName} "")
 
-set(mySources ConfigurationTest.cpp )
+set(mySources ConfigurationTest.cpp RixEsp32NetConfigDemo.cpp)
 
 target_sources (${projectTestName} PRIVATE ${mySources})
 target_include_directories(${projectName} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} )
