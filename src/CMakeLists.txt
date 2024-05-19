@@ -20,7 +20,7 @@ foreach (entry ${CMAKE_PREFIX_PATH})
     list(APPEND includeFolders ${entry}/include)
 endforeach() 
 
-  # We directly add the dependency include folder (it's header only)
+# We directly add the safe-cstring include folder (it's header only)
 list(APPEND includeFolders ${${safeCStringName}_SOURCE_DIR}/src)
 
 set(myHeaders Configuration.h)
