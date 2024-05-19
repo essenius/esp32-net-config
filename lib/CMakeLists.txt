@@ -3,14 +3,14 @@ include(tools)
 include(FindGit)
 find_package(Git)
 
-assertVariableSet(Git_FOUND espMockName TOP_LEVEL)
+assertVariableSet(Git_FOUND espMockName espMockVersion TOP_LEVEL)
 
 include (FetchContent)
 
 FetchContent_Declare(
     ${espMockName}
     GIT_REPOSITORY https://github.com/essenius/esp32-mock
-    GIT_TAG v0.1.10    
+    GIT_TAG v${espMockVersion}    
 )
 
 FetchContent_MakeAvailable_With_Check(${espMockName})

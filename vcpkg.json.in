@@ -2,11 +2,11 @@
     "dependencies": [
         {
             "name": "safe-cstring",
-            "version>=": "0.6.3"
+            "version>=": "${safeCstringVersion}"
         },
         {
             "name": "esp32-mock",
-            "version>=": ""
+            "version>=": "${esp32MockVersion}"
         }
     ]
 }

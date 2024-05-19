@@ -1,7 +1,7 @@
 rem the script is in the root folder, that's our base
 set basePath=%~dp0
-set project=RixEspNetConfig
-set demo=RixEspNetConfigDemo
+set project=${projectName}
+set demo=${projectName}Demo
 rem The Compress-Archive command can't deal very well with selective addition of files in subfolders, so we build up the folder with everything we need in temp.
 if exist "%temp%\%project%" rmdir "%temp%\%project%" /s /q
 mkdir "%temp%\%project%\src"

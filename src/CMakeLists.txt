@@ -1,17 +1,17 @@
 include(tools)
 
-assertVariableSet(projectName espMockName TOP_LEVEL)
+assertVariableSet(projectName espMockName safeCstringName safeCstringVersion TOP_LEVEL)
 
 include(FindGit)
 find_package(Git)
 include(FetchContent)
 
 FetchContent_Declare(
-  safe-cstring
+  ${safeCstringName}
   GIT_REPOSITORY https://github.com/essenius/safe-cstring
-  GIT_TAG        main
+  GIT_TAG        v${safeCstringVersion}
 )
-FetchContent_MakeAvailable(safe-cstring)
+FetchContent_MakeAvailable(${safeCstringName})
 
 add_library(${projectName} "")
 
@@ -20,15 +20,8 @@ foreach (entry ${CMAKE_PREFIX_PATH})
     list(APPEND includeFolders ${entry}/include)
 endforeach() 
 
-# show all variables
-get_cmake_property(_variableNames VARIABLES)
-list (SORT _variableNames)
-foreach (_variableName ${_variableNames})
-    message(STATUS "${_variableName}=${${_variableName}}")
-endforeach()
-
   # We directly add the dependency include folder (it's header only)
-list(APPEND includeFolders ${safe-cstring_SOURCE_DIR}/src)
+list(APPEND includeFolders ${${safeCStringName}_SOURCE_DIR}/src)
 
 set(myHeaders Configuration.h)
 set(mySources Configuration.cpp)

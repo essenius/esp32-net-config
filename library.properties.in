@@ -1,0 +1,9 @@
+name=${projectName}
+version=${version}
+author=${author}
+maintainer=${author}
+sentence=${shortDescription}
+paragraph=${description}
+category=${category}
+url=${url}
+architectures=${architectures}

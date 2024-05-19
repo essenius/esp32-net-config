@@ -1,7 +1,9 @@
-# esp32-net-config
+# RixEspNetConfig
 
-Storing and retrieving network configuration data using Preferences. Supported are firmware, MQTT, TLS, WiFi and IP configuration.
+A library for storing/retrieving network settings using Preferences.
 
-See the [demo application](test/RixEsp32NetConfigDemo.cpp) for details on how to use.
+This library provides a Configuration class that can store Wifi, MQTT, TLS and other settings in the ESP32 Preferences. It also provides a simple way to retrieve these settings.
+
+See the [demo application](test/RixEspNetConfigDemo.cpp) for details on how to use.
 
 

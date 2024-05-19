@@ -1,0 +1,9 @@
+# ${projectName}
+
+${shortDescription}
+
+${description}
+
+See the [demo application](test/${projectName}Demo.cpp) for details on how to use.
+
+
